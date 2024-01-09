@@ -12,6 +12,7 @@
       echo '目的　<input type="text"><br>';
       echo 'カテゴリー';//プルダウンで表示
       echo '目標金額　<input type="text">';
-      echo 'メモ　<input '
+      echo 'メモ　<input ';
+      ?>
 </body>
 </html>
