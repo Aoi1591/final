@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php require 'db_connect.php';?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -9,11 +10,12 @@
 <body>
     <?php
     //ログイン画面でセッションにいれる！！
-    if(isset($_SESSION['User'])){
+    if(isset($_SESSION['Uzer'])){
         $pdo = new PDO($connect,USER,PASS);
-        $sql =$pdo->prepare('select * from Money where id=?');
+        $sql =$pdo->prepare('select * from Money where uzer_id=?');
         
-        $stmt = $pdo->query($sql);
+        //セッションから取得したユーザーIDを設定
+        $sql->excute([$_SESSION['Uzer']['id']])
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         //一覧
