@@ -15,19 +15,21 @@
         $sql =$pdo->prepare('select * from Money where uzer_id=?');
         
         //セッションから取得したユーザーIDを設定
-        $sql->excute([$_SESSION['Uzer']['id']])
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $sql->execute([$_SESSION['Uzer']['id']]);
+        $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
         //一覧
         foreach($result as $row){
-            $id = $row['user_id'];
+            $id = $row['uzer_id'];
 
             echo $row['line_day'];
             echo $row['name'];
             echo $row['category_id'];
             echo $row['money'];
             echo $row['memo'];
-
+            
+            echo '<a href="delete.php?id=',$id,'">削除</a>';//1データ削除
+            echo '<a href="update.php?id=',$id,'">更新</a>';//データ更新
 
         }
     }
