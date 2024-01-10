@@ -1,3 +1,4 @@
+<?php require "db_connect.php"?>
 <?php
 unset($_SESSION['Uzer']);
 $pdo=new PDO($connect,USER,PASS);
