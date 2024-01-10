@@ -9,7 +9,7 @@
     <?php
        if(isset($_SESSION['User'])){
         $pdo = new PDO($connect,USER,PASS);
-        $sql = "SELECT  FROM Money";
+        $sql = 'SELECT  FROM Money';
         
         $stmt = $pdo->query($sql);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

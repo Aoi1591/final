@@ -6,13 +6,14 @@
     <title>登録</title>
 </head>
 <body>
+    <h2>登録</h2>
     <?php
      
       echo '日付　<input type="date"><br>';
       echo '目的　<input type="text"><br>';
-      echo 'カテゴリー';//プルダウンで表示
-      echo '目標金額　<input type="text">';
-      echo 'メモ　<input type="text"> ';
+      echo 'カテゴリー<br>';//プルダウンで表示
+      echo '目標金額　<input type="text"><br>';
+      echo 'メモ　<input type="text"><br>';
       echo '<input type="button">登録';
       ?>
 </body>

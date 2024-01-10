@@ -1,3 +1,4 @@
+<?php require 'db_connect.php';?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -10,7 +11,7 @@
     //ログイン画面でセッションにいれる！！
     if(isset($_SESSION['User'])){
         $pdo = new PDO($connect,USER,PASS);
-        $sql = "SELECT  FROM Money";
+        $sql =$pdo->prepare('select * from Money where id=?');
         
         $stmt = $pdo->query($sql);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
