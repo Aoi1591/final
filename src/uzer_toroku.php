@@ -11,7 +11,7 @@
        if(isset($_SESSION['Uzer'])){
          $name=$_SESSION['Uzer']['name'];
          $address=$_SESSION['Uzer']['address'];
-         $password=$_SESSION['Uzer']['password'];
+         $pass=$_SESSION['Uzer']['pass'];
        }
    
        echo '<form action="customer-output.php" method="post">';
@@ -23,7 +23,7 @@
        echo '<input type="text" name="address" value="',$address,'">';
        echo '</td></tr>';
        echo '<tr><td>パスワード</td><td>';
-       echo '<input type="password" name="password" value="',$password,'">';
+       echo '<input type="password" name="pass" value="',$pass,'">';
        echo '</td></tr>';
        echo '</table>';
        echo '<input type="submit" value="確定">';

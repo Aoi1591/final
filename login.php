@@ -8,7 +8,7 @@
 <body>
     <form action="login_out.php" method="post">
         ログイン名<input type="text" name="name"><br>
-        パスワード<input type="password" name="password"><br>
+        パスワード<input type="password" name="pass"><br>
         <input type="submit" value="ログイン">
         <input type="button" value="新規登録" onclick="uzer_toroku.php">新規登録
     </form>

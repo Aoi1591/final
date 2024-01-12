@@ -12,7 +12,7 @@ $result = $sql->fetchAll();
 
 foreach ($result as $row) {
     // ハッシュ化されていない場合のパスワード比較
-    if($_POST['password'] == $row['pass']) {
+    if($_POST['pass'] == $row['pass']) {
         $_SESSION['Uzer'] = [
             'id' => $row['uzer_id'],
             'name' => $row['name'],
