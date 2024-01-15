@@ -18,23 +18,22 @@
     $memo = $_SESSION['Money']['memo'];
    }
    
-   echo '<form action="customer-output.php" method="post">';
-   echo '<table>';
-   echo '<tr><td>日付</td><td>';
+   echo '<form action="toroku-output.php" method="post">';
+   echo '日付';
    echo '<input type="date" name="line_day" value="',$line_day,'">';
-   echo '</td></tr>';
-   echo '<tr><td>名前</td><td>';
+   echo '<br>';
+   echo '用途';
    echo '<input type="text" name="name" value="',$name,'">';
-   echo '</td></tr>';
-   echo '<tr><td>カテゴリー</td><td>';
+   echo '<br>';
+   echo 'カテゴリー';
    echo '<input type="text" name="caategory" value="',$category_id,'">';
-   echo '</td></tr>';
-   echo '<tr><td>金額</td><td>';
+   echo '<br>';
+   echo '金額';
    echo '<input type="text" name="password" value="',$money,'">';
-   echo '</td></tr>';
-   echo '<tr><td>メモ</td><td>';
+   echo '<br>';
+   echo 'メモ';
    echo '<input type="text" name="memo" value="',$memo,'">';
-   echo '</table>';
+   echo '<br>';
    echo '<input type="submit" value="確定">';
    echo  '</form>';
    ?>
