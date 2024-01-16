@@ -28,12 +28,21 @@
             echo $row['money'];
             echo $row['memo'];
             
-            echo '<a href="delete.php?id=',$id,'">削除</a>';//1データ削除
-            echo '<a href="update.php?id=',$id,'">更新</a>';//データ更新
+            
+            echo '<form action="delete.php" method="post">';
+            echo '<input type="hidden" name="id" value="',$row['id'],'">';
+            echo '<button type="submit">削除</button>';
+            echo '</form>';
+
+            echo '<form action="update.php" method="post">';
+            echo '<input type="hidden" name="id" value="',$row['id'],'">';
+            echo '<button type="submit">更新</button>';
+
 
         }
     }
     ?>
+
     
 </body>
 </html>
