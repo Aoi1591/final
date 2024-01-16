@@ -46,9 +46,5 @@
                 echo "\n";
             }
             ?>
-        </table>
-        <form action="ren6-5-input.php" method="post">
-            <button type="submit">追加画面に戻る</button>
-        </form>
-        <button onclick="location.href='ren6-8-top.php'">トップ画面へ</button>
+        <button onclick="location.href='top.php'">トップ画面へ</button>
     </body>
