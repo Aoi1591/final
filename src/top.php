@@ -1,5 +1,6 @@
 <?php session_start();?>
 <?php require 'db_connect.php';?>
+<?php require 'header.php';?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
