@@ -26,8 +26,21 @@
            echo '<tr>';
            echo '<td>',$row['line_day'], '</td>';
            echo '<td>',$row['name'], '</td>';
-        foreach($pdo->query(''))//プルダウンかく！
-           echo '<td>',$row['category_id'],'</td>';
+           
+           //プルダウン
+           echo '<label for="category">カテゴリー選択:</label>';
+           echo '<select name="category" id="category">';
+       
+           // カテゴリーのデータを取得してプルダウンメニューに表示
+           $categorySql = $pdo->prepare('SELECT id, name FROM Category');
+           $categorySql->execute();
+       
+           while ($categoryRow = $categorySql->fetch(PDO::FETCH_ASSOC)) {
+               echo '<option value="' . $categoryRow['id'] . '">' . $categoryRow['name'] . '</option>';
+           }
+       
+           echo '</select>';
+
            echo '<td>',$row['money'], '</td>';
            echo '<td>',$row['memo'],'</td>';
            echo '</tr>';
