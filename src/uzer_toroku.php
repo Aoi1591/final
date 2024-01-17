@@ -14,7 +14,7 @@
          $pass=$_SESSION['Uzer']['pass'];
        }
    
-       echo '<form action="customer-output.php" method="post">';
+       echo '<form action="uzer_toroku_output.php" method="post">';
        echo '<table>';
        echo '<tr><td>お名前</td><td>';
        echo '<input type="text" name="name" value="',$name,'">';

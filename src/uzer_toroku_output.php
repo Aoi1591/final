@@ -1,6 +1,5 @@
 <?php session_start();?>
-<?php require 'header.php';?>
-<?php require 'db-connect.php';?>
+<?php require 'db_connect.php';?>
 <?php
 $pdo = new PDO($connect,USER,PASS);
 if(isset($_SESSION['Uzer'])){
