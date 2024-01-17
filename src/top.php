@@ -19,16 +19,17 @@
     
 
         echo '<table>';
-		echo '<tr><th>日付</th><th>用途</th><th>金額</th><th>メモ</th></tr>';
+		echo '<tr><th>日付</th><th>用途</th><th>金額</th><th>カテゴリー</th><th>メモ</th></tr>';
 
         foreach ($pdo->query('select * from Money') as $row) {
           $id = $row['id'];
            echo '<tr>';
            echo '<td>',$row['line_day'], '</td>';
            echo '<td>',$row['name'], '</td>';
-           
+           echo '<td>',$row['money'], '</td>';
+            echo '<td>';
            //プルダウン
-           echo '<label for="category">カテゴリー選択:</label>';
+           //echo '<label for="category">カテゴリー選択:</label>';
            echo '<select name="category" id="category">';
        
            // カテゴリーのデータを取得してプルダウンメニューに表示
@@ -40,8 +41,7 @@
            }
        
            echo '</select>';
-
-           echo '<td>',$row['money'], '</td>';
+           echo '</td>';
            echo '<td>',$row['memo'],'</td>';
            echo '</tr>';
            echo "\n";
