@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php require 'db_connect.php';?>
   <!DOCTYPE html>
    <html lang="ja">
@@ -8,8 +9,7 @@
     <body>
         <?php
           $pdo=new PDO($connect,USER,PASS);
-          $sql=$pdo->prepare('update Money set line_day=?,name=?,money=?,category_id=?,memo=? where id=?');
-
+          $sql=$pdo->prepare('update Money set line_day=?,name=?,money=?,memo=? where id=?');
           if(empty($_POST['name'])){
              echo '用途を入力してください。';
           }else
@@ -17,7 +17,7 @@
              echo '金額を整数で入力しください。';
            }else
 
-           if($sql->execute([htmlspecialchars($_POST['line_day'],$_POST['name']),$_POST['money'],$_POST['category_id'],$_POST['memo'],$_POST['id']])){
+           if($sql->execute([htmlspecialchars($_POST['line_day']),($_POST['name']),($_POST['money']),($_POST['memo']),($_POST['id'])])){
             echo '更新に成功しました。';
            }else  {
             echo '更新に失敗しました。';

@@ -8,7 +8,7 @@
 	</head>
 	<body>
     <table>
-    <tr><th>日付</th><th>用途</th><th>カテゴリー</th><th>金額</th><th>メモ</th></tr>
+    <tr><th>ID</th><th>日付</th><th>用途</th><th>カテゴリー</th><th>金額</th><th>メモ</th></tr>
 <?php
     $pdo=new PDO($connect, USER, PASS);
 	$sql=$pdo->prepare('select * from Money where id=?');
@@ -18,6 +18,9 @@
 	foreach ($sql as $row) {
         echo '<tr>';
 		echo '<form action="update-output.php" method="post">';
+		echo '<td>';
+		echo '<input type="text" name="id" value="',$row['id'],'">';
+		echo '</td>';
         echo '<td> ';
 		echo '<input type="text" name="line_day" value="', $row['line_day'], '">';
 		echo '</td> ';
