@@ -3,8 +3,8 @@
 <?php
 $pdo = new PDO($connect,USER,PASS);
 if(isset($_SESSION['Uzer'])){
-    $id=$_SESSION['Uzer']['id'];
-    $sql=$pdo->prepare('select * from Uzer where id!=? and address=?');
+    $id=$_SESSION['Uzer']['uzer_id'];
+    $sql=$pdo->prepare('select * from Uzer where uzer_id!=? and address=?');
     $sql->execute([$id,$_POST['address']]);
 }else{
     $sql=$pdo->prepare('select * from Uzer where address=?');
@@ -12,23 +12,22 @@ if(isset($_SESSION['Uzer'])){
 }
 if(empty($sql->fetchAll())){
     if(isset($_SESSION['Uzer'])){
-        $sql=$pdo->prepare('update Uzer set name=?,address=?,password=? where id=?');
+        $sql=$pdo->prepare('update Uzer set name=?,address=?,pass=? where uzer_id=?');
         
         $sql->execute([
-            $_POST['name'],$_POST['address'],$_POST['password'],$id]);
+            $_POST['name'],$_POST['address'],$_POST['pass'],$id]);
         $_SESSION['UZer']=[
             'id'=>$id,'name'=>$_POST['name'],
             'address'=>$_POST['address'],
-            'passwoed'=>$_POST['password']];
+            'pass'=>$_POST['pass']];
         echo 'お客様情報を更新しました。';
     }else{
         $sql=$pdo->prepare('insert into Uzer values(null,?,?,?)');
         $sql->execute([
-            $_POST['name'],$_POST['address'],$_POST['password']]);
+            $_POST['name'],$_POST['address'],$_POST['pass']]);
         echo 'お客様情報を登録しました。';
     }
 }else{
     echo 'ログイン名がすでに使用されていますので、変更してください。';
 }
 ?>
-<?php require 'footer.php';?>
