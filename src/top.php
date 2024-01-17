@@ -22,12 +22,20 @@
         foreach($result as $row){
             $id = $row['uzer_id'];
 
-            echo $row['line_day'];
-            echo $row['name'];
-            echo $row['category_id'];
-            echo $row['money'];
-            echo $row['memo'];
-            
+        echo '<table>';
+		echo '<tr><th>日付</th><th>用途</th><th>金額</th><th>メモ</th></tr>';
+
+        foreach ($pdo->query('select * from Money') as $row) {
+           echo '<tr>';
+           echo '<td>',$row['date'], '</td>';
+           echo '<td>',$row['name'], '</td>';
+           echo '<td>',$row['category'],'</td>';
+           echo '<td>',$row['price'], '</td>';
+           echo '<td>',$row['memo'],'</td>';
+           echo '</tr>';
+           echo "\n";
+        }  
+       </table>
             
             echo '<form action="delete.php" method="post">';
             echo '<input type="hidden" name="id" value="',$row['id'],'">';

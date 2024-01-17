@@ -20,9 +20,9 @@
 ?>
     <br><hr><br>
 	<table>
-		<tr><th>商品番号</th><th>商品名</th><th>価格</th></tr>
+		<tr><th>日付</th><th>用途</th><th>金額</th><th>メモ</th></tr>
 <?php
-    foreach ($pdo->query('select * from Product') as $row) {
+    foreach ($pdo->query('select * from Money') as $row) {
         echo '<tr>';
         echo '<td>',$row['date'], '</td>';
         echo '<td>',$row['name'], '</td>';

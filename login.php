@@ -10,7 +10,9 @@
         ログイン名<input type="text" name="name"><br>
         パスワード<input type="password" name="pass"><br>
         <input type="submit" value="ログイン">
-        <input type="button" value="新規登録" onclick="uzer_toroku.php">新規登録
+    </form>
+    <form action="uzer_toroku.php">
+        <input type="submit" value="新規登録">
     </form>
 </body>
 </html>
