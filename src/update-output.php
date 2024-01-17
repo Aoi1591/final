@@ -45,4 +45,40 @@ if (isset($_POST['insert'])) {
     if ($sqlInsert->execute([$line_day, $name, $money, $category_id, $memo])) {
         echo '挿入に成功しました。';
     } else {
-        echo '挿入に失敗し
+        echo '挿入に失敗しました。';
+    }
+}
+?>
+<!-- ここからは表示部分 -->
+<hr>
+<table>
+    <tr><th>日付</th><th>用途</th><th>金額</th><th>カテゴリー</th><th>メモ</th></tr>
+
+<?php
+foreach ($pdo->query('select * from Money') as $row) {
+    echo '<tr>';
+    echo '<td>', $row['line_day'], '</td>';
+    echo '<td>', $row['name'], '</td>';
+    echo '<td>', $row['money'], '</td>';
+    echo '<td>', $row['category_id'], '</td>';
+    echo '<td>', $row['memo'], '</td>';
+    echo '</tr>';
+    echo "\n";
+}
+?>
+</table>
+
+<!-- フォーム部分 -->
+<form method="POST" action="">
+    <!-- 更新用のフォーム -->
+    <h2>データ更新</h2>
+    <!-- 各種入力フォームなど -->
+
+    <!-- 挿入用のフォーム -->
+    <h2>データ挿入</h2>
+    <!-- 各種入力フォームなど -->
+    <input type="submit" name="insert" value="挿入">
+</form>
+
+</body>
+</html>
