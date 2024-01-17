@@ -25,7 +25,7 @@
 		echo '<input type="text" name="name" value="', $row['name'], '">';
 		echo '</td> ';
         echo '<td>';
-		echo '<input type="text" name="category" value="', $row['category_id'], '">';
+		echo '<input type="text" name="category_id" value="', $row['category_id'], '">';
 		echo '</td> ';
 		echo '<td>';
 		echo ' <input type="text" name="money" value="', $row['money'], '">';
