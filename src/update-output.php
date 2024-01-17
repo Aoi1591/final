@@ -16,7 +16,7 @@
             echo '日付を入力してください';
           }else if(empty($_POST['name'])){
              echo '用途を入力してください。';
-          }else if(!preg_match('/[0+9]+/',$_POST['price'])){
+          }else if(!preg_match('/[0+9]+/',$_POST['money'])){
              echo '金額を整数で入力しください。';
           }else if(empty($_POST['category'])){
             echo 'カテゴリーを選択してください';
@@ -38,7 +38,7 @@
             echo '<td>',$row['line_day'],'</td>';
             echo '<td>',$row['name'],'</td>';
             echo '<td>',$row['money'],'</td>';
-            echo '<td>',$row['category'],'</td>';
+            echo '<td>',$row['category_id'],'</td>';
             echo '<td>',$row['memo'],'</td>';
             echo '</tr>';
             echo "\n";
