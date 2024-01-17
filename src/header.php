@@ -10,5 +10,4 @@
 <a href="logout-input.php">ログアウト</a>
 <a href="my.php">マイページ</a>
 <hr>
-</body>
-</html>
+
