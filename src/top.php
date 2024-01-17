@@ -35,7 +35,7 @@
            echo '</tr>';
            echo "\n";
         }  
-       </table>
+        echo '</table>';
             
             echo '<form action="delete.php" method="post">';
             echo '<input type="hidden" name="id" value="',$row['id'],'">';

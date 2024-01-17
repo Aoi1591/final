@@ -6,6 +6,7 @@ if(isset($_SESSION['Uzer'])){
     $id=$_SESSION['Uzer']['uzer_id'];
     $sql=$pdo->prepare('select * from Uzer where uzer_id!=? and address=?');
     $sql->execute([$id,$_POST['address']]);
+    var_dump($_SESSION['Uzer']);
 }else{
     $sql=$pdo->prepare('select * from Uzer where address=?');
     $sql->execute([$_POST['address']]);
