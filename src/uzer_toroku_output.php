@@ -21,12 +21,12 @@ if(empty($sql->fetchAll())){
             'id'=>$id,'name'=>$_POST['name'],
             'address'=>$_POST['address'],
             'pass'=>$_POST['pass']];
-        echo 'お客様情報を更新しました。';
+        echo 'ユーザー情報を更新しました。';
     }else{
         $sql=$pdo->prepare('insert into Uzer values(null,?,?,?)');
         $sql->execute([
             $_POST['name'],$_POST['address'],$_POST['pass']]);
-        echo 'お客様情報を登録しました。';
+        echo 'ユーザー情報を登録しました。';
     }
 }else{
     echo 'ログイン名がすでに使用されていますので、変更してください。';
