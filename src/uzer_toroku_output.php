@@ -5,7 +5,7 @@ $pdo = new PDO($connect,USER,PASS);
 if(isset($_SESSION['Uzer'])){
     $id=$_SESSION['Uzer']['id'];
     $sql=$pdo->prepare('select * from Uzer where id!=? and address=?');
-    $sql->execute([$id,$_POST['adress']]);
+    $sql->execute([$id,$_POST['address']]);
 }else{
     $sql=$pdo->prepare('select * from Uzer where address=?');
     $sql->execute([$_POST['address']]);
