@@ -18,19 +18,23 @@
         $sql->execute([$_SESSION['Uzer']['id']]);
         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+        
+
         //一覧
         foreach($result as $row){
-            $id = $row['uzer_id'];
+            $uzer_id = $row['uzer_id'];
+
 
         echo '<table>';
 		echo '<tr><th>日付</th><th>用途</th><th>金額</th><th>メモ</th></tr>';
 
         foreach ($pdo->query('select * from Money') as $row) {
+          $id = $row['id'];
            echo '<tr>';
-           echo '<td>',$row['date'], '</td>';
+           echo '<td>',$row['line_day'], '</td>';
            echo '<td>',$row['name'], '</td>';
-           echo '<td>',$row['category'],'</td>';
-           echo '<td>',$row['price'], '</td>';
+           echo '<td>',$row['category_id'],'</td>';
+           echo '<td>',$row['money'], '</td>';
            echo '<td>',$row['memo'],'</td>';
            echo '</tr>';
            echo "\n";
@@ -43,7 +47,7 @@
             echo '</form>';
 
             echo '<form action="update.php" method="post">';
-            echo '<input type="hidden" name="id" value="',$row['id'],'">';
+            echo '<input type="hidden" name="id" value="',$id,'">';
             echo '<button type="submit">更新</button>';
 
 

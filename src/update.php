@@ -8,10 +8,10 @@
 	</head>
 	<body>
     <table>
-    <tr><th>商品番号</th><th>商品名</th><th>商品価格</th></tr>
+    <tr><th>日付</th><th>用途</th><th>金額</th><th>メモ</th></tr>
 <?php
     $pdo=new PDO($connect, USER, PASS);
-	$sql=$pdo->prepare('select * from Money where uzer_id=?');
+	$sql=$pdo->prepare('select * from Money where id=?');
 	$sql->execute([$_POST['id']]);
 
 
@@ -25,10 +25,10 @@
 		echo '<input type="text" name="name" value="', $row['name'], '">';
 		echo '</td> ';
         echo '<td>';
-		echo '<input type="text" name="name" value="', $row['category'], '">';
+		echo '<input type="text" name="name" value="', $row['category_id'], '">';
 		echo '</td> ';
 		echo '<td>';
-		echo ' <input type="text" name="price" value="', $row['price'], '">';
+		echo ' <input type="text" name="price" value="', $row['money'], '">';
 		echo '</td> ';
         echo '<td>';
         echo '<input type="text" name="memo" value="',$row['memo'],'">';
