@@ -18,8 +18,6 @@
              echo '用途を入力してください。';
           }else if(!preg_match('/[0+9]+/',$_POST['money'])){
              echo '金額を整数で入力しください。';
-          }else if(empty($_POST['category'])){
-            echo 'カテゴリーを選択してください';
           
            }else
             if($sql->execute([htmlspecialchars($_POST['line_day'],$_POST['name']),$_POST['money'],$_POST['category'],$_POST['memo'],$_POST['id']])){
