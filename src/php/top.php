@@ -2,6 +2,7 @@
 <?php require 'db_connect.php';?>
 <?php require 'title.php';?>
 <?php require 'header.php';?>
+<link rel="stylesheet" href="../css/top.css">
     <?php
     //ログイン画面でセッションにいれる！！
     if(isset($_SESSION['Uzer'])){

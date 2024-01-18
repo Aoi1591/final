@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    background-color: #f9c1cf;
+}
+
+table,th,td{
+    border: 1px solid #fff;
+}
+th{
+    /*色*/
+    color: #fff;
+    background-color: #f69896;
+    /*テーブルの幅*/
+    width: 100px;
+    height: 50px;
+}
