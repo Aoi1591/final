@@ -45,7 +45,7 @@
    $categorySql->execute();
        
       while ($categoryRow = $categorySql->fetch(PDO::FETCH_ASSOC)) {
-            echo '<option value="' . $categoryRow['name'] . '">' . $categoryRow['name'] . '</option>';
+            echo '<option value="' . $categoryRow['id'] . '">' . $categoryRow['name'] . '</option>';
       }
    
    echo '<br>';

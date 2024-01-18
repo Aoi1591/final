@@ -13,7 +13,6 @@
         $sql->execute([$_SESSION['Uzer']['id']]);
         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-        
 
         //一覧
         foreach($result as $row){
@@ -24,12 +23,19 @@
 		echo '<tr><th>日付</th><th>用途</th><th>金額</th><th>カテゴリー</th><th>メモ</th><th>削除</th><th>更新</th></tr>';
 
         foreach ($pdo->query('select * from Money') as $row) {
+
           $id = $row['id'];
            echo '<tr>';
            echo '<td>',$row['line_day'], '</td>';
            echo '<td>',$row['name'], '</td>';
            echo '<td>',$row['money'], '</td>';
-           echo '<td>',$row['category'],'</td>';
+           //カテゴリーの取得
+           $category_id = $row['category_id'];
+           $category_sql = $pdo->prepare('SELECT name FROM Category WHERE id = ?');
+           $category_sql->execute([$category_id]);
+           $category_name = $category_sql->fetchColumn();
+   
+           echo '<td>', $category_name, '</td>';
            echo '<td>',$row['memo'],'</td>';
 
            //削除
