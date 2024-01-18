@@ -7,7 +7,7 @@
 </head>
 <body>
     <form action="login_out.php" method="post">
-        ログイン名<input type="text" name="name"><br>
+        メールアドレス<input type="text" name="address"><br>
         パスワード<input type="password" name="pass"><br>
         <input type="submit" value="ログイン">
     </form>

@@ -21,14 +21,19 @@ if(empty($sql->fetchAll())){
             'id'=>$id,'name'=>$_POST['name'],
             'address'=>$_POST['address'],
             'pass'=>$_POST['pass']];
+        //トップに飛ばす
+        header("Location:./my.php");
+        $alert = "<script type='text/javascript'>alert('ユーザー情報を更新しました。');</script>";
         echo 'ユーザー情報を更新しました。';
     }else{
         $sql=$pdo->prepare('insert into Uzer values(null,?,?,?)');
         $sql->execute([
             $_POST['name'],$_POST['address'],$_POST['pass']]);
-        echo 'ユーザー情報を登録しました。';
+            //ログインに飛ばす
+            header("Location:./login.php");
+            $alert = "<script type='text/javascript'>alert('ユーザー情報を登録しました。');</script>";
     }
 }else{
-    echo 'ログイン名がすでに使用されていますので、変更してください。';
+    echo 'メールアドレスがすでに使用されていますので、変更してください。';
 }
 ?>

@@ -9,9 +9,9 @@
     <title>登録</title>
 </head>
 -->
-    <h2>登録</h2>
+    <h3>登録</h3>
     <?php
-   $name=$address=$login=$password='';
+   $line_day = $name = $money = $memo'';
 
    if(isset($_SESSION['Money'])){
     $line_day=$_SESSION['Money']['line_day'];
@@ -21,6 +21,7 @@
     $memo = $_SESSION['Money']['memo'];
    }
    
+   echo '<div>';
    echo '<form action="toroku_output.php" method="post">';
    echo '日付';
    echo '<input type="date" name="line_day" value="',$line_day,'">';
@@ -31,11 +32,25 @@
    echo '金額';
    echo '<input type="text" name="money" value="',$money,'">';
    echo '<br>';
+   //プルダウン
+   echo '<label for="category">カテゴリー選択:</label>';
+   echo '<select name="category" id="category">';
+       
+   // カテゴリーのデータを取得してプルダウンメニューに表示
+   $categorySql = $pdo->prepare('SELECT id, name FROM Category');
+   $categorySql->execute();
+       
+      while ($categoryRow = $categorySql->fetch(PDO::FETCH_ASSOC)) {
+            echo '<option value="' . $categoryRow['id'] . '">' . $categoryRow['name'] . '</option>';
+      }
+       
+   echo '</select>';
    echo 'メモ';
    echo '<input type="text" name="memo" value="',$memo,'">';
    echo '<br>';
    echo '<input type="submit" value="確定">';
    echo  '</form>';
+   echo '</div>'
    ?>
 </body>
 </html>

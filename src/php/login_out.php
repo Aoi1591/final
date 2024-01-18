@@ -4,8 +4,8 @@ require "db_connect.php";
 unset($_SESSION['Uzer']);
 
 $pdo = new PDO($connect, USER, PASS);
-$sql = $pdo->prepare('select * from Uzer where name=?');
-$sql->execute([$_POST['name']]);
+$sql = $pdo->prepare('select * from Uzer where adderss=?');
+$sql->execute([$_POST['address']]);
 $result = $sql->fetchAll();
 
 //var_dump($result); データベースからの結果確認
@@ -15,8 +15,8 @@ foreach ($result as $row) {
     if($_POST['pass'] == $row['pass']) {
         $_SESSION['Uzer'] = [
             'id' => $row['uzer_id'],
-            'name' => $row['name'],
-            'password' => $row['pass'] // ハッシュ化されていないパスワードをセッションに保存
+            'address' => $row['addess'],
+            'pass' => $row['pass'] // ハッシュ化されていないパスワードをセッションに保存
         ];
     }
 }
@@ -25,6 +25,6 @@ if(isset($_SESSION['Uzer'])) {
     echo 'ログインに成功しました！';
     echo '<a href="top.php">トップへ</a>'; // top.phpにとばす
 } else {
-    echo 'ログイン名またはパスワードが違います';
+    echo 'メールアドレスまたはパスワードが違います';
 }
 ?>
