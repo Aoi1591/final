@@ -11,7 +11,11 @@
 -->
     <h3>登録</h3>
     <?php
-   $line_day = $name = $money = $memo'';
+   $line_day = $name = $money = $memo ='';
+   
+    
+    $pdo = new PDO($connect,USER,PASS);
+    $sql =$pdo->prepare('select * from Uzer where uzer_id=?');
 
    if(isset($_SESSION['Money'])){
     $line_day=$_SESSION['Money']['line_day'];
@@ -41,16 +45,17 @@
    $categorySql->execute();
        
       while ($categoryRow = $categorySql->fetch(PDO::FETCH_ASSOC)) {
-            echo '<option value="' . $categoryRow['id'] . '">' . $categoryRow['name'] . '</option>';
+            echo '<option value="' . $categoryRow['name'] . '">' . $categoryRow['name'] . '</option>';
       }
-       
+   
+   echo '<br>';
    echo '</select>';
    echo 'メモ';
    echo '<input type="text" name="memo" value="',$memo,'">';
    echo '<br>';
    echo '<input type="submit" value="確定">';
    echo  '</form>';
-   echo '</div>'
+   echo '</div>';
    ?>
 </body>
 </html>

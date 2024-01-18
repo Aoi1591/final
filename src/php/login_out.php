@@ -4,7 +4,7 @@ require "db_connect.php";
 unset($_SESSION['Uzer']);
 
 $pdo = new PDO($connect, USER, PASS);
-$sql = $pdo->prepare('select * from Uzer where adderss=?');
+$sql = $pdo->prepare('select * from Uzer where address=?');
 $sql->execute([$_POST['address']]);
 $result = $sql->fetchAll();
 
@@ -15,7 +15,7 @@ foreach ($result as $row) {
     if($_POST['pass'] == $row['pass']) {
         $_SESSION['Uzer'] = [
             'id' => $row['uzer_id'],
-            'address' => $row['addess'],
+            'address' => $row['address'],
             'pass' => $row['pass'] // ハッシュ化されていないパスワードをセッションに保存
         ];
     }
