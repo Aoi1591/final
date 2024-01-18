@@ -1,5 +1,6 @@
 <?php session_start();?>
 <?php require 'db_connect.php';?>
+<?php require 'title.php';?>
 <?php require 'header.php';?>
     <?php
     //ログイン画面でセッションにいれる！！

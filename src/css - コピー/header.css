@@ -1,0 +1,45 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .hamburger-menu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  height: 24px;
+  width: 24px;
+}
+
+.hamburger-line {
+  background-color: #fff;
+  height: 2px;
+  width: 24px;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+  }
+  /* styles.css */
+.nav-menu.display {
+    display: block;
+  }
