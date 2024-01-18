@@ -41,7 +41,7 @@
            //削除
            echo '<td>';
            echo '<form action="delete.php" method="post">';
-           echo '<input type="hidden" name="id" value="',$row['id'],'">';
+           echo '<input type="hidden" name="id" value="',$id,'">';
            echo '<button type="submit">削除</button>';
            echo '</form>';
            echo '</td>';

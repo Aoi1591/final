@@ -19,21 +19,6 @@
 
 ?>
     <br><hr><br>
-	<table>
-		<tr><th>日付</th><th>用途</th><th>金額</th><th>メモ</th></tr>
-<?php
-    foreach ($pdo->query('select * from Money') as $row) {
-        echo '<tr>';
-        echo '<td>',$row['date'], '</td>';
-        echo '<td>',$row['name'], '</td>';
-        echo '<td>',$row['category'],'</td>';
-        echo '<td>',$row['price'], '</td>';
-        echo '<td>',$row['memo'],'</td>';
-        echo '</tr>';
-        echo "\n";
-    }
-?> 
-</table>
         <button onclick="location.href='top.php'">トップへ戻る</button>
     </body>
 </html>
