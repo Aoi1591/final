@@ -21,7 +21,7 @@
     
 
         echo '<table>';
-		echo '<tr><th>日付</th><th>用途</th><th>金額</th><th>カテゴリー</th><th>メモ</th></tr>';
+		echo '<tr><th>日付</th><th>用途</th><th>金額</th><th>カテゴリー</th><th>メモ</th><th>削除</th><th>更新</th></tr>';
 
         foreach ($pdo->query('select * from Money') as $row) {
           $id = $row['id'];
@@ -45,19 +45,28 @@
            echo '</select>';
            echo '</td>';
            echo '<td>',$row['memo'],'</td>';
+
+           //削除
+           echo '<td>';
+           echo '<form action="delete.php" method="post">';
+           echo '<input type="hidden" name="id" value="',$row['id'],'">';
+           echo '<button type="submit">削除</button>';
+           echo '</form>';
+           echo '</td>';
+
+           //更新
+           echo '<td>';
+           echo '<form action="update.php" method="post">';
+            echo '<input type="hidden" name="id" value="',$id,'">';
+            echo '<button type="submit">更新</button>';
+           echo '</td>';
+           
            echo '</tr>';
            echo "\n";
         }  
         echo '</table>';
             
-            echo '<form action="delete.php" method="post">';
-            echo '<input type="hidden" name="id" value="',$row['id'],'">';
-            echo '<button type="submit">削除</button>';
-            echo '</form>';
-
-            echo '<form action="update.php" method="post">';
-            echo '<input type="hidden" name="id" value="',$id,'">';
-            echo '<button type="submit">更新</button>';
+           
     }
 }
 
