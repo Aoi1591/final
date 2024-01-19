@@ -1,5 +1,4 @@
 <?php require 'title.php'; ?>
-<link rel="stylesheet" href="../css/Utouroku.css">
 <?php require 'header.php';?>
 <link rel="stylesheet" href="../css/toroku.css">
 
