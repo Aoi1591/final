@@ -4,6 +4,7 @@
 <?php require 'header.php';?>
 <link rel="stylesheet" href="../css/top.css">
 
+<h3>トップ</h3>
 <?php
 //ログイン画面でセッションにいれる！！
 if(isset($_SESSION['Uzer'])){
@@ -41,7 +42,7 @@ if(isset($_SESSION['Uzer'])){
             echo '<td>';
             echo '<form action="delete.php" method="post">';
             echo '<input type="hidden" name="id" value="', $id, '">';
-            echo '<button type="submit">削除</button>';
+            echo '<input class="del" type="submit" value="削除">';
             echo '</form>';
             echo '</td>';
 
@@ -49,7 +50,7 @@ if(isset($_SESSION['Uzer'])){
             echo '<td>';
             echo '<form action="update.php" method="post">';
             echo '<input type="hidden" name="id" value="', $id, '">';
-            echo '<button type="submit">更新</button>';
+            echo '<input class="new" type="submit" value="更新">';
             echo '</form>';
             echo '</td>';
 

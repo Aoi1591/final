@@ -2,7 +2,7 @@ body {
     text-align: center;
     background-color: #fff;
 }
-
+/*テーブル*/
 table,th,td{
     border: 1px solid #fff;
     text-align: center;
@@ -19,6 +19,21 @@ td{
     /*中身を中央ぞろえ*/
     vertical-align: middle;
 }
-button{
+/*確定ボタン*/
+.bto{
+    font-size: 50px;
     color: #f69896;
+    background-color: #fff;
+    border:2px #f69896;
+    border-radius: 20px;
+}
+h3{
+    color: #f69896;
+}
+/*テキストボックス*/
+.text{
+   border: 2px solid #bfc5ca;
+}
+.text:focus{
+    outline:solid 2px #f69896;
 }

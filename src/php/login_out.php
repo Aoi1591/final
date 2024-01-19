@@ -23,11 +23,14 @@ foreach ($result as $row) {
         ];
     }
 }
-
 if(isset($_SESSION['Uzer'])) {
+    echo '<div class="mesage">';
     echo 'ログインに成功しました！';
+    echo '</div>';
     echo '<a href="top.php">トップへ</a>'; // top.phpにとばす
 } else {
+    echo '<div class="mesage">';
     echo 'メールアドレスまたはパスワードが違います';
+    echo '</div>';
 }
 ?>

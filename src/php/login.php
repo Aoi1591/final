@@ -9,12 +9,16 @@
 </head>
 <body>
     <form action="login_out.php" method="post">
+        <p>
         メールアドレス<input type="text" name="address"><br>
-        パスワード<input type="password" name="pass"><br>
-        <input type="submit" value="ログイン">
+        　パスワード　<input type="password" name="pass"><br>
+        </p>
+        <div class="log">
+        <input class="login" type="submit" value="ログイン">
     </form>
     <form action="uzer_toroku.php">
-        <input type="submit" value="新規登録">
+        <input class="toro" type="submit" value="新規登録"> 
+        </div>
     </form>
 </body>
 </html>

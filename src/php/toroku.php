@@ -31,17 +31,17 @@
    echo '<form action="toroku_output.php" method="post">';
    echo '<tr>';
    echo '<td>';
-   echo '<input type="date" name="line_day" value="',$line_day,'">';
+   echo '<input class="text" type="date" name="line_day" value="',$line_day,'">';
    echo '</td>';
    echo '<td>';
-   echo '<input type="text" name="name" value="',$name,'">';
+   echo '<input class="text" type="text" name="name" value="',$name,'">';
    echo '</td>';
    echo '<td>';
-   echo '<input type="text" name="money" value="',$money,'">';
+   echo '<input class="text" type="text" name="money" value="',$money,'">';
    echo '</td>';
    echo '<td>';
    //プルダウン
-   echo '<select name="category" id="category">';
+   echo '<select class="text" name="category" id="category">';
        
    // カテゴリーのデータを取得してプルダウンメニューに表示
    $categorySql = $pdo->prepare('SELECT id, name FROM Category');
@@ -54,12 +54,12 @@
    echo '</select>';
    echo '</td>';
    echo '<td>';
-   echo '<input type="text" name="memo" value="',$memo,'">';
+   echo '<input class="text" type="text" name="memo" value="',$memo,'">';
    echo '</td>';
    echo '</tr>';
    echo '</table>';
    echo '<br>';
-   echo '<input type="submit" value="確定">';
+   echo '<input class="bto" type="submit" value="確定">';
    echo  '</form>';
    ?>
 </body>

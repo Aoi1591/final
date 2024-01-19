@@ -2,6 +2,18 @@ body {
     text-align: center;
     background-color: #fff;
 }
-button{
+
+h3{
+    color: #f69896;
+}
+/*確定ボタン*/
+.bto{
+    font-size: 50px;
+    color: #f69896;
+    background-color: #fff;
+    border:2px #f69896;
+    border-radius: 20px;
+}
+p{
     color: #f69896;
 }

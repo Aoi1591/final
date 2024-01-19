@@ -25,10 +25,12 @@
    
    echo '<div>';
    echo '<form action="cate_output.php" method="post">';
+   echo '<p>';
    echo 'カテゴリー名';
+   echo '</p>';
    echo '<input type="text" name="name" value="',$name,'">';
    echo '<br>';
-   echo '<input type="submit" value="確定">';
+   echo '<input class="bto" type="submit" value="確定">';
    echo  '</form>';
    echo '</div>';
    ?>

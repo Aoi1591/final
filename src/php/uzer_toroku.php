@@ -1,9 +1,9 @@
 <?php require 'title.php'; ?>
 <link rel="stylesheet" href="../css/Utouroku.css">
 <?php require 'header.php';?>
-<link rel="stylesheet" href="../css/Utoroku.css">
+<link rel="stylesheet" href="../css/toroku.css">
 
-    <center><h1>ユーザー登録</h1></center>
+    <center><h3>ユーザー登録</h3></center>
     <?php
        $name=$address=$login=$pass='';
 
@@ -12,21 +12,23 @@
          $address=$_SESSION['Uzer']['address'];
          $pass=$_SESSION['Uzer']['pass'];
        }
-   
+
+       echo '<p>';
        echo '<form action="uzer_toroku_output.php" method="post">';
        echo '<table>';
        echo '<tr><td>お名前</td><td>';
-       echo '<input type="text" name="name" value="',$name,'">';
+       echo '<input  class="text" type="text" name="name" value="',$name,'">';
        echo '</td></tr>';
        echo '<tr><td>メールアドレス</td><td>';
-       echo '<input type="text" name="address" value="',$address,'">';
+       echo '<input class="text" type="text" name="address" value="',$address,'">';
        echo '</td></tr>';
        echo '<tr><td>パスワード</td><td>';
-       echo '<input type="password" name="pass" value="',$pass,'">';
+       echo '<input class="text" type="password" name="pass" value="',$pass,'">';
        echo '</td></tr>';
        echo '</table>';
-       echo '<input type="submit" value="確定">';
+       echo '<input class="text" type="submit" value="確定">';
        echo  '</form>';
+       echo '</p>';
     ?>
 </body>
 </html>

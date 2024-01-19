@@ -5,3 +5,10 @@ body {
 button{
     color: #f69896;
 }
+.text{
+    border: 2px solid #bfc5ca;
+ }
+ .text:focus{
+     border: 2px solid #f69896;
+     box-shadow: #f69896;
+ }
