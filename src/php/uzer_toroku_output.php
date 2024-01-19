@@ -1,12 +1,14 @@
 <?php session_start();?>
 <?php require 'db_connect.php';?>
+<?php require 'title.php';?>
+<?php require 'header.php';?>
+<link rel="stylesheet" href="../css/Utoroku.css">
 <?php
 $pdo = new PDO($connect,USER,PASS);
 if(isset($_SESSION['Uzer'])){
-    $id=$_SESSION['Uzer']['uzer_id'];
+    $id=$_SESSION['Uzer']['id'];
     $sql=$pdo->prepare('select * from Uzer where uzer_id!=? and address=?');
     $sql->execute([$id,$_POST['address']]);
-    var_dump($_SESSION['Uzer']);
 }else{
     $sql=$pdo->prepare('select * from Uzer where address=?');
     $sql->execute([$_POST['address']]);
@@ -22,8 +24,6 @@ if(empty($sql->fetchAll())){
             'address'=>$_POST['address'],
             'pass'=>$_POST['pass']];
         //トップに飛ばす
-        header("Location:./my.php");
-        $alert = "<script type='text/javascript'>alert('ユーザー情報を更新しました。');</script>";
         echo 'ユーザー情報を更新しました。';
     }else{
         $sql=$pdo->prepare('insert into Uzer values(null,?,?,?)');
@@ -37,3 +37,5 @@ if(empty($sql->fetchAll())){
     echo 'メールアドレスがすでに使用されていますので、変更してください。';
 }
 ?>
+</body>
+</html>

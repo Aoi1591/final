@@ -1,6 +1,9 @@
 <?php
 session_start();
 require "db_connect.php";
+require 'title.php';
+require 'header.php';
+echo '<link rel="stylesheet" href="../css/login.css">';
 unset($_SESSION['Uzer']);
 
 $pdo = new PDO($connect, USER, PASS);

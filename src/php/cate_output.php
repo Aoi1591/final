@@ -5,6 +5,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/cate.css">
     <title>カテゴリー登録</title>
 </head>
 <body>

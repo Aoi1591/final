@@ -1,6 +1,7 @@
 <?php require 'db_connect.php';?>
 <?php require 'title.php';?>
 <?php require 'header.php';?>
+<link rel="stylesheet" href="../css/toroku.css">
 <!--<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -25,19 +26,21 @@
     $memo = $_SESSION['Money']['memo'];
    }
    
-   echo '<div>';
+   echo '<table>';
+        echo '<tr><th>日付</th><th>用途</th><th>金額</th><th>カテゴリー</th><th>メモ</th></tr>';
    echo '<form action="toroku_output.php" method="post">';
-   echo '日付';
+   echo '<tr>';
+   echo '<td>';
    echo '<input type="date" name="line_day" value="',$line_day,'">';
-   echo '<br>';
-   echo '用途';
+   echo '</td>';
+   echo '<td>';
    echo '<input type="text" name="name" value="',$name,'">';
-   echo '<br>';
-   echo '金額';
+   echo '</td>';
+   echo '<td>';
    echo '<input type="text" name="money" value="',$money,'">';
-   echo '<br>';
+   echo '</td>';
+   echo '<td>';
    //プルダウン
-   echo '<label for="category">カテゴリー選択:</label>';
    echo '<select name="category" id="category">';
        
    // カテゴリーのデータを取得してプルダウンメニューに表示
@@ -48,14 +51,16 @@
             echo '<option value="' . $categoryRow['id'] . '">' . $categoryRow['name'] . '</option>';
       }
    
-   echo '<br>';
    echo '</select>';
-   echo 'メモ';
+   echo '</td>';
+   echo '<td>';
    echo '<input type="text" name="memo" value="',$memo,'">';
+   echo '</td>';
+   echo '</tr>';
+   echo '</table>';
    echo '<br>';
    echo '<input type="submit" value="確定">';
    echo  '</form>';
-   echo '</div>';
    ?>
 </body>
 </html>

@@ -1,9 +1,14 @@
 <?php require 'db_connect.php';?>
+<?php 
+      require 'title.php';
+      require 'header.php';
+?>
 
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/delete.css">
 		<title>削除</title>
 	</head>
 	<body>
@@ -18,8 +23,6 @@
     }
 
 ?>
-    <br><hr><br>
-        <button onclick="location.href='top.php'">トップへ戻る</button>
     </body>
 </html>
 

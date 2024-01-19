@@ -1,6 +1,7 @@
 <?php require 'db_connect.php';?>
 <?php require 'title.php';?>
 <?php require 'header.php';?>
+<link rel="stylesheet" href="../css/cate.css">
 <!--<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -25,7 +26,7 @@
    echo '<div>';
    echo '<form action="cate_output.php" method="post">';
    echo 'カテゴリー名';
-   echo '<input type="date" name="line_day" value="',$name,'">';
+   echo '<input type="text" name="name" value="',$name,'">';
    echo '<br>';
    echo '<input type="submit" value="確定">';
    echo  '</form>';

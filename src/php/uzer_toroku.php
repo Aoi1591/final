@@ -1,12 +1,11 @@
 <?php require 'title.php'; ?>
-<link rel="stylesheet" href="../css/touroku.css">
-<title>ユーザー登録</title>
-</head>
-    <body>
+<link rel="stylesheet" href="../css/Utouroku.css">
+<?php require 'header.php';?>
+<link rel="stylesheet" href="../css/Utoroku.css">
 
     <center><h1>ユーザー登録</h1></center>
     <?php
-       $name=$address=$login=$password='';
+       $name=$address=$login=$pass='';
 
        if(isset($_SESSION['Uzer'])){
          $name=$_SESSION['Uzer']['name'];

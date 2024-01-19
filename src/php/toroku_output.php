@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php require 'db_connect.php'; ?>
+<link rel="stylesheet" href="../css/toroku.css">
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -25,13 +26,13 @@
             } else if (empty($_POST['memo'])) {
                 echo 'メモを入力してください';
             } else {
-                // カテゴリー名からカテゴリーIDを取得
+                //カテゴリー名からカテゴリーIDを取得
                 $category_name = $_POST['category'];
                 $category_sql = $pdo->prepare('SELECT id FROM Category WHERE name = ?');
                 $category_sql->execute([$category_name]);
                 $category_id = $category_sql->fetchColumn();
-
-                $result = $sql->execute([$_SESSION['Uzer']['id'], $_POST['line_day'], $_POST['name'], $category_id, $_POST['money'], $_POST['memo']]);
+                 
+                $result = $sql->execute([$_SESSION['Uzer']['id'], $_POST['line_day'], $_POST['name'], $_POST['category'], $_POST['money'], $_POST['memo']]);
                 
                 if ($result) {
                     echo '<font color="red">登録しました。</font>';

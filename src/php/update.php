@@ -1,48 +1,58 @@
 <?php require 'db_connect.php';?>
-
-<!DOCTYPE html>
-<html lang="ja">
-	<head>
-		<meta charset="UTF-8">
-		<title>更新</title>
-	</head>
+<?php require 'title.php';?>
+<?php require 'header.php';?>
+		<link rel="stlesheet" href="../css/update.css">
 	<body>
-    <table>
-    <tr><th>ID</th><th>日付</th><th>用途</th><th>カテゴリー</th><th>金額</th><th>メモ</th></tr>
-<?php
+	<?php
+
+     $line_day = $name = $money = $memo ='';
+   
     $pdo=new PDO($connect, USER, PASS);
 	$sql=$pdo->prepare('select * from Money where id=?');
 	$sql->execute([$_POST['id']]);
 
+	echo '<table>';
+	echo '<tr><th>日付</th><th>用途</th><th>金額</th><th>カテゴリー</th><th>メモ</th></tr>';
 
 	foreach ($sql as $row) {
-        echo '<tr>';
+		$id = $row['id'];
 		echo '<form action="update-output.php" method="post">';
+		echo '<input type="hidden" name="dateid" value="', $id, '">';
+		echo '<tr>';
 		echo '<td>';
-		echo '<input type="text" name="id" value="',$row['id'],'">';
+		echo '<input type="date" name="line_day" value="',$row['line_day'],'">';
 		echo '</td>';
-        echo '<td> ';
-		echo '<input type="text" name="line_day" value="', $row['line_day'], '">';
-		echo '</td> ';
 		echo '<td>';
-		echo '<input type="text" name="name" value="', $row['name'], '">';
-		echo '</td> ';
-        echo '<td>';
-		echo '<input type="text" name="category_id" value="', $row['category_id'], '">';
-		echo '</td> ';
+		echo '<input type="text" name="name" value="',$row['name'],'">';
+		echo '</td>';
 		echo '<td>';
-		echo ' <input type="text" name="money" value="', $row['money'], '">';
-		echo '</td> ';
-        echo '<td>';
-        echo '<input type="text" name="memo" value="',$row['memo'],'">';
-        echo '</td>';
-		echo '<td><input type="submit" value="更新"></td>';
+		echo '<input type="text" name="money" value="',$row['money'],'">';
+		echo '</td>';
+		echo '<td>';
+		//プルダウン
+
+		echo '<select name="category" id="category">';
+			
+		// カテゴリーのデータを取得してプルダウンメニューに表示
+		$categorySql = $pdo->prepare('SELECT id, name FROM Category');
+		$categorySql->execute();
+			
+		   while ($categoryRow = $categorySql->fetch(PDO::FETCH_ASSOC)) {
+				 echo '<option value="' . $categoryRow['id'] . '">' . $categoryRow['name'] . '</option>';
+		   }
+		
+		echo '</select>';
+		echo '</td>';
+		echo '<td>';
+		echo '<input type="text" name="memo" value="',$row['memo'],'">';
+		echo '</td>';
+		echo '<tr>';
 		echo '</form>';
-        echo '</tr>';
+		echo '</table>';
 		echo "\n";
+		echo '<input type="submit" value="更新">';
 	}
 ?>
-</table>
 <button onclick="location.href='top.php'">トップへ戻る</button>
     </body>
 </html>
