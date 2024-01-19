@@ -25,7 +25,7 @@
        echo '<input class="text" type="password" name="pass" value="',$pass,'">';
        echo '</td></tr>';
        echo '</table>';
-       echo '<input class="text" type="submit" value="確定">';
+       echo '<input class="bto" type="submit" value="確定">';
        echo  '</form>';
        echo '</p>';
     ?>

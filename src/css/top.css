@@ -20,13 +20,14 @@ td{
     vertical-align: middle;
 }
 .del{
+    font-size: 20px;
     color: #fbc5ca;
     background-color: #fff;
     border:2px #f69896;
     border-radius: 20px;
 }
 .new{
- 
+    font-size: 20px;
     color: #f69896;
     background-color: #fff;
     border:2px #f69896;

@@ -25,13 +25,16 @@ td{
 }
 /*確定ボタン*/
 .bto{
-    font-size: 50px;
+    font-size: 28px;
     color: #f69896;
     background-color: #fff;
     border:2px #f69896;
     border-radius: 20px;
 }
 h3{
+    color: #f69896;
+}
+p{
     color: #f69896;
 }
 /*テキストボックス*/
