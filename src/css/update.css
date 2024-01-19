@@ -19,6 +19,17 @@ td{
     /*中身を中央ぞろえ*/
     vertical-align: middle;
 }
-button{
+.bto{
+    width: 100px;
+    font-size: 15px;
     color: #f69896;
+    background-color: #fff;
+    border:2px #f69896;
+    border-radius: 20px;
 }
+.text{
+    border: 2px solid #bfc5ca;
+ }
+ .text:focus{
+     outline:solid 2px #f69896;
+ }

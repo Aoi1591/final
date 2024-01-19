@@ -1,14 +1,8 @@
 <?php session_start(); ?>
 <?php require 'db_connect.php'; ?>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
+<?php require 'title.php';?>
+<?php require 'header.php';?>
     <link rel="stylesheet" href="../css/cate.css">
-    <title>カテゴリー登録</title>
-</head>
-<body>
     <?php
     if (isset($_SESSION['Uzer'])) {
         try {
@@ -35,7 +29,5 @@
         }
     }
     ?>
-    <br><hr><br>
-    <button onclick="location.href='top.php'">トップ画面へ</button>
 </body>
 </html>

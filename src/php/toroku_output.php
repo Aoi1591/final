@@ -1,14 +1,10 @@
 <?php session_start(); ?>
 <?php require 'db_connect.php'; ?>
+<?php require 'title.php';?>
+<?php require 'header.php';?>
 <link rel="stylesheet" href="../css/toroku.css">
 
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>登録</title>
-</head>
-<body>
+
     <?php
     if (isset($_SESSION['Uzer'])) {
         try {
@@ -47,6 +43,5 @@
     }
     ?>
     <br><hr><br>
-    <button onclick="location.href='top.php'">トップ画面へ</button>
 </body>
 </html>

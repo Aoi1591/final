@@ -34,6 +34,5 @@
            }
         ?>
         <hr>
-        <button onclick="location.href='top.php'">トップ画面へ</button>
     </body>
    </html>

@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="../css/top.css">
 
 <h3>トップ</h3>
+<h4><font color=red>※ログインしていない場合は表示できません</font></h4>
 <?php
 //ログイン画面でセッションにいれる！！
 if(isset($_SESSION['Uzer'])){

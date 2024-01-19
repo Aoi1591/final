@@ -3,12 +3,7 @@ body {
     top: 30px;
     background-color: #fff;
 }
-.log{
-    color: #f69896;
-    background-color: #fff;
-    border:2px #f69896;
-    border-radius: 20px;
-}
+
 p{
    color: #f9c1cf;
 }
@@ -19,8 +14,8 @@ p{
 }
 .login{
     position: relative;
-    top: 24.6px;
-    right: 30px;
+    top: 23px;
+    right: 25px;
 
     color: #f69896;
     background-color: #fff;
@@ -28,6 +23,8 @@ p{
     border-radius: 20px;
 }
 .toro{
+    width: 100px;
+    height: 20px;
     position: relative;
     top: 0px;
     left:100px;

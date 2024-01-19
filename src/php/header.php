@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/header.css">
-        <title>タイトル</title>
+        <title>Pla Pay</title>
 </head>
 <body>
 <a href="top.php">トップ</a>

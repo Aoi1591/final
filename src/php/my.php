@@ -10,7 +10,8 @@
     <title>登録</title>
 </head>
 -->
-    <h3>登録</h3>
+    <h3>カテゴリー登録</h3>
+    <h4><font color=red>※ログインしていない場合は登録されません</font></h4>
     <?php
    $line_day = $name = $money = $memo ='';
    

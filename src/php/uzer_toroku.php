@@ -2,7 +2,7 @@
 <?php require 'header.php';?>
 <link rel="stylesheet" href="../css/toroku.css">
 
-    <center><h3>ユーザー登録</h3></center>
+    <center><h3>ユーザー情報</h3></center>
     <?php
        $name=$address=$login=$pass='';
 

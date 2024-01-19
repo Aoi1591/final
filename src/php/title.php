@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./css/title.css">
+<link rel="stylesheet" href="../css/title.css">
 <?php
   echo '<h2>';
   echo 'Pla Pay';
